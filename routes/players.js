@@ -1,7 +1,6 @@
 const express = require('express');
-const playerSchema = require("../model/players");
 const router = express.Router();
-const players = require('../controller/index')
+const players = require('../controller/player')
 
 // Create player
 router.post('/players', players.createPlayer);
