@@ -17,7 +17,7 @@ const createTeam =  (req, res) => {
             color:color
         })
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => res.status(500).json({ message: error }));
 };
 
 // Get teams
@@ -26,7 +26,7 @@ const getTeams = (req, res) => {
     teamSchema
         .find()
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => res.status(500).json({ message: error }));
 };
 
 // Get teams by ID
@@ -35,7 +35,7 @@ const getTeamById = (req, res) => {
     teamSchema
         .findById(id)
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => res.status(500).json({ message: error }));
 };
 
 // Modify teams by ID
@@ -45,7 +45,7 @@ const modifyTeam = (req, res) => {
     teamSchema
         .updateOne({ _id: id }, { $set:{ teamName, championships, numberOfPlayers, city, value, coach, color } })
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => res.status(500).json({ message: error }));
 };
 
 // Delete teams by ID
@@ -54,7 +54,7 @@ const deleteTeamById = (req, res) => {
     teamSchema
         .deleteOne({ _id: id })
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => res.status(500).json({ message: error }));
 };
 
 
