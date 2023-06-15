@@ -1,21 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const players = require('../controller/player')
+const players = require('../controller/player');
+const { requiresAuth } = require('express-openid-connect');
 
 // Create player
-router.post('/players', players.createPlayer);
+router.post('/', players.createPlayer);
 
 // Get players
-router.get('/players', players.getPlayers);
+router.get('/', players.getPlayers);
 
 // Get players by ID
-router.get('/players/:id', players.getPlayerById);
+router.get('/:id', players.getPlayerById);
 
 // Modify players by ID
-router.put('/players/:id', players.modifyPlayer);
+router.put('/:id', players.modifyPlayer);
 
 // Delete players by ID
-router.delete('/players/:id', players.deletePlayerById);
+router.delete('/:id', players.deletePlayerById);
 
 
 module.exports = router;
