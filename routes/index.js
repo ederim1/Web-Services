@@ -10,7 +10,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: process.env.secret,
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://players-api.onrender.com',
   clientID: 'YeuNFyvuWrDwTYJULK7JeIMq6sZDVkVg',
   issuerBaseURL: 'https://dev-ggz053ev4nk8ly5c.us.auth0.com'
 };
